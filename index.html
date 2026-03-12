@@ -33,12 +33,12 @@
   .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; }
   .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; margin-top: 10px; }
 
-  /* Lightbox (Zoom) */
   .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; }
   .lightbox img { max-width: 95%; max-height: 90vh; border-radius: 5px; object-fit: contain; }
   
   .popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
   .popup-box { background: white; padding: 35px 25px; border-radius: 25px; max-width: 420px; width: 100%; position: relative; text-align: center; overflow-y: auto; max-height: 90vh; }
+  .popup-box h3 { color: #2d5a27; margin-bottom: 10px; }
   .popup-box img { width: 100%; border-radius: 15px; margin-top: 20px; }
   .close { position: absolute; right: 20px; top: 15px; font-size: 22px; cursor: pointer; color: #888; }
 
@@ -69,6 +69,7 @@
       <p><strong>ရွှေခြူး | Shwe Chuu</strong></p>
       <p>ရွှေခြူးသည် မြန်မာ့ရိုးရာချည်ထည်အလှကို ခေတ်သစ်ဒီဇိုင်းနှင့် ပေါင်းစပ်ဖန်တီးထားသော premium textile brand တစ်ခုဖြစ်ပါသည်။</p>
       <p>ရက္ကန်းလက်ရာများနှင့် အရည်အသွေးမြင့်ချည်သားများကို အသုံးပြုကာ မိန်းကလေးတိုင်း၏ အလှကို သဘာဝဆန်စွာ ထင်ရှားစေမည့် ဒီဇိုင်းများကို ဖန်တီးပေးပါသည်။</p>
+      <p>ရွှေခြူး၏အထည်တိုင်းတွင် မြန်မာ့ရိုးရာ၊ အရည်အသွေးနှင့် အလှတရားတို့ကို ပေါင်းစပ်ထားပါသည်။</p>
     </div>
   </div>
 </section>
@@ -105,31 +106,19 @@
         <div class="grid">
             <div class="product-card">
                 <img src="https://i.postimg.cc/QC54Wdxw/41BF3925-8EE4-40FA-9E50-D194B4E75CFF.png" onclick="openLightbox(this.src)">
-                <div class="product-info">
-                    <div style="font-size: 12px;">အရောင်ကူး</div>
-                    <div class="price">38,500 ကျပ်</div>
-                </div>
+                <div class="product-info"><div style="font-size: 12px;">အရောင်ကူး</div><div class="price">38,500 ကျပ်</div></div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/7Y0d5mfB/IMG-3884.jpg" onclick="openLightbox(this.src)">
-                <div class="product-info">
-                    <div style="font-size: 12px;">ချည်ဇာ</div>
-                    <div class="price">33,500 ကျပ်</div>
-                </div>
+                <div class="product-info"><div style="font-size: 12px;">ချည်ဇာ</div><div class="price">33,500 ကျပ်</div></div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/T3bSWQhL/21B462C6-2451-487D-9B86-CB2BA8D77914.png" onclick="openLightbox(this.src)">
-                <div class="product-info">
-                    <div style="font-size: 12px;">ဆောင်းဒါး</div>
-                    <div class="price">30,000 ကျပ်</div>
-                </div>
+                <div class="product-info"><div style="font-size: 12px;">ဆောင်းဒါး</div><div class="price">30,000 ကျပ်</div></div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/m2fR41pB/IMG-3881.jpg" onclick="openLightbox(this.src)">
-                <div class="product-info">
-                    <div style="font-size: 12px;">လက်ငင်ချည်</div>
-                    <div class="price">38,500 ကျပ်</div>
-                </div>
+                <div class="product-info"><div style="font-size: 12px;">လက်ငင်ချည်</div><div class="price">38,500 ကျပ်</div></div>
             </div>
         </div>
     </div>
@@ -137,10 +126,22 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Delivery & Order Notes</h2>
+    <h2 class="section-title">Delivery Information</h2>
     <div class="info-box">
       <p>Delivery ရောက်နိုင်သော မြို့များတွင် <strong>Cash On Delivery (COD)</strong> ဖြင့် ပို့ဆောင်ပေးပါသည်။</p>
-      <p>သင့်အတွက်သင့်တော်သော design ကို ရွေးချယ်ပြီး အောက်ပါ Channel များမှ တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။</p>
+      <p>Delivery မရောက်သော မြို့များအတွက် <strong>ကားဂိတ်တင်ပို့ပေးပြီး ငွေကြိုရှင်းရန် လိုအပ်ပါသည်။</strong></p>
+      <p>Order အတည်ပြုပြီးနောက် Messenger / Telegram / Viber မှ အသေးစိတ်ပို့ဆောင်ရေးအချက်အလက်များကို ပြန်လည်အကြောင်းကြားပေးပါမည်။</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Order Notes</h2>
+    <div class="info-box">
+      <p>ရွှေခြူးမှာ တန်၊ လှ၊ ဝတ်ချင်စရာကောင်းတဲ့ promotion များစွာ အမြဲရှိနေပါတယ်။</p>
+      <p>Instock items များကို အမြန်ဆုံးပို့ဆောင်ပေးပြီး collection အလိုက် care instructions များလည်း တစ်ပါတည်းပါဝင်ပါသည်။</p>
+      <p>သင့်အတွက်သင့်တော်သော design ကို ရွေးချယ်ပြီး Messenger / Telegram / Viber မှ တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။</p>
     </div>
   </div>
 </section>
@@ -151,8 +152,8 @@
         
         <div style="padding: 25px; text-align: left; font-size: 15px; background: #fff; line-height: 2.2; border-radius: 15px; border: 1px solid #eaded3; margin-bottom: 20px;">
             <div><strong>Facebook:</strong> <a href="https://www.facebook.com/61580201721195" target="_blank" style="color: #1877F2; text-decoration: none;">Shwe Chuu Page</a></div>
-            <div><strong>Viber:</strong> <a href="https://connect.viber.com/business/9c0d4aa2-f5d6-11f0-b20d-52cfee22cfe8" target="_blank" style="color: #7360f2; text-decoration: none;">Connect on Viber</a></div>
-            <div><strong>Phone:</strong> <a href="tel:09779813875" style="color: #000; text-decoration: none;">09 779 813 875</a></div>
+            <div><strong>Viber:</strong> <a href="https://connect.viber.com/business/9c0d4aa2-f5d6-11f0-b20d-52cfee22cfe8" target="_blank" style="color: #7360f2; text-decoration: none;">09 779 813 875</a></div>
+            <div><strong>Gmail:</strong> <a href="mailto:shwechuu126@gmail.com" style="color: #d93025; text-decoration: none;">shwechuu126@gmail.com</a></div>
             <div><strong>Telegram:</strong> <a href="https://t.me/shwechuu126" target="_blank" style="color: #0088cc; text-decoration: none;">@shwechuu126</a></div>
         </div>
 
@@ -173,8 +174,10 @@
     <span class="close" onclick="closePopup()">✕</span>
     <h3>🏷 🌿 Simple • Natural • Comfortable</h3>
     <p><strong>Shwechuu | Shorts Co-ord Set</strong></p>
-    <p>Price – 34,000 MMK</p>
-    <p style="color:#c33; font-weight:bold;">Buy 2 Deli Free</p>
+    <p>Designed for comfort, styled for everyday wear.</p>
+    <p style="margin: 10px 0;">Sizes – S / M / L</p>
+    <p><strong>Price – 34,000 MMK</strong></p>
+    <p style="color:#c33; font-weight:bold; margin-top: 5px;">Buy 2 Deli Free</p>
     <img src="https://i.postimg.cc/mZHV2kn3/Beige-Elegant-Simple-Size-Chart-Instagram-Post.png">
     <a href="https://m.me/61580201721195" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ်</a>
   </div>
