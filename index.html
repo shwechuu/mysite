@@ -1,1014 +1,223 @@
 <!DOCTYPE html>
 <html lang="my">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ရွှေခြူး | Shwe Chuu Premium Textile</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: sans-serif;
-      background: #faf7f3;
-      color: #3d2b27;
-      line-height: 1.7;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: rgba(255, 250, 246, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eaded3;
-    }
-
-    .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      gap: 18px;
-    }
-
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #e4d6ca;
-      background: #f7efe7;
-      flex-shrink: 0;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-    }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .brand-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: #a06b13;
-      letter-spacing: 0.3px;
-    }
-
-    .brand-subtitle {
-      font-size: 11px;
-      color: #8b1e1e;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: #6f544c;
-    }
-
-    .nav-links a:hover {
-      color: #8b1e1e;
-    }
-
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(to right, rgba(250,247,243,0.97) 0%, rgba(250,247,243,0.84) 42%, rgba(250,247,243,0.22) 100%),
-        url("https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png") center/cover no-repeat;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 28px;
-      align-items: center;
-      padding: 90px 0;
-    }
-
-    .hero-logo-card {
-      background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(247,239,231,0.95));
-      border: 1px solid #e7d8cc;
-      border-radius: 26px;
-      padding: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    }
-
-    .hero-logo-box {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #f5ede6;
-    }
-
-    .hero-logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-logo-text {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 13px;
-      color: #8b1e1e;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-content {
-      max-width: 640px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid #dcc3aa;
-      background: rgba(255,255,255,0.68);
-      color: #8b1e1e;
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.08;
-      color: #a06b13;
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-
-    .hero h2 {
-      font-size: 25px;
-      color: #7d1717;
-      margin-bottom: 14px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-size: 17px;
-      color: #5f4942;
-      max-width: 560px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: #8b1e1e;
-      color: #fff;
-      border: 1px solid #8b1e1e;
-    }
-
-    .btn-primary:hover {
-      background: #6d1414;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #a06b13;
-      border: 1px solid #c9a26b;
-    }
-
-    .btn-secondary:hover {
-      background: #a06b13;
-      color: #fff;
-    }
-
-    .section {
-      padding: 84px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      color: #8b1e1e;
-      margin-bottom: 12px;
-      font-weight: 800;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 42px;
-      color: #7b625a;
-      font-size: 16px;
-    }
-
-    .feature-strip {
-      background: #fffaf6;
-      border-top: 1px solid #eaded3;
-      border-bottom: 1px solid #eaded3;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      padding: 24px 0;
-    }
-
-    .feature-card {
-      text-align: center;
-      padding: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 16px;
-      color: #8b1e1e;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #765f57;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 28px;
-      align-items: center;
-      background: #fff;
-      border: 1px solid #eaded3;
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .logo-card {
-      background: linear-gradient(to bottom, #fffaf6, #f6efe8);
-      border: 1px solid #eaded3;
-      border-radius: 22px;
-      padding: 20px;
-    }
-
-    .logo-box {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #f6efe7;
-    }
-
-    .logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .logo-caption {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 14px;
-      color: #8b1e1e;
-      font-weight: 700;
-    }
-
-    .about-text p {
-      margin-bottom: 12px;
-      font-size: 15px;
-      color: #4d3933;
-    }
-
-    .highlight {
-      color: #8b1e1e;
-      font-weight: 700;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .product-card {
-      background: #fff;
-      border: 1px solid #eaded3;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 34px rgba(0,0,0,0.07);
-    }
-
-    .product-image {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #f1eae3;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .product-label {
-      font-size: 12px;
-      color: #9d7a71;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .product-info h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: #4a2c2a;
-    }
-
-    .product-price {
-      font-size: 19px;
-      font-weight: 800;
-      color: #000;
-      margin-bottom: 6px;
-    }
-
-    .product-note {
-      font-size: 12px;
-      font-weight: 700;
-      color: #c63e3e;
-      margin-bottom: 14px;
-      line-height: 1.6;
-    }
-
-    .product-btn {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: #a06b13;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .product-btn:hover {
-      background: #82550d;
-    }
-
-    .care-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .care-card {
-      background: #fff;
-      border: 1px solid #eaded3;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-
-    .care-card h3 {
-      font-size: 22px;
-      color: #8b1e1e;
-      margin-bottom: 14px;
-    }
-
-    .care-card p {
-      font-size: 15px;
-      color: #4f3b35;
-      margin-bottom: 12px;
-    }
-
-    .care-list {
-      padding-left: 18px;
-    }
-
-    .care-list li {
-      margin-bottom: 10px;
-      color: #4f3b35;
-      font-size: 15px;
-    }
-
-    .info-badge {
-      display: inline-block;
-      padding: 8px 12px;
-      background: #f8eee5;
-      color: #8b1e1e;
-      border: 1px solid #e6d2c0;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .review-card {
-      background: linear-gradient(to bottom, #fff, #fcf6f0);
-      border: 1px solid #eaded3;
-      border-radius: 24px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-
-    .review-avatar {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 14px;
-      border: 3px solid #f1dfcb;
-      background: #f3ebe4;
-    }
-
-    .review-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .review-stars {
-      color: #c89a2b;
-      font-size: 20px;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-
-    .review-text {
-      font-size: 15px;
-      color: #5b4740;
-      margin-bottom: 12px;
-    }
-
-    .review-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #8b1e1e;
-    }
-
-    .cta-box {
-      background: linear-gradient(to right, #fff, #fcf5ee);
-      border: 1px solid #eaded3;
-      border-radius: 28px;
-      padding: 40px 28px;
-      text-align: center;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.04);
-    }
-
-    .cta-box h3 {
-      font-size: 30px;
-      color: #8b1e1e;
-      margin-bottom: 12px;
-    }
-
-    .cta-box p {
-      max-width: 720px;
-      margin: 0 auto 20px;
-      font-size: 16px;
-      color: #6a5149;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .contact-card {
-      background: #fff;
-      border: 1px solid #eaded3;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-
-    .contact-card h3 {
-      font-size: 20px;
-      color: #8b1e1e;
-      margin-bottom: 14px;
-    }
-
-    .contact-card p,
-    .contact-card div {
-      font-size: 15px;
-      color: #4e3a35;
-      margin-bottom: 10px;
-      word-break: break-word;
-    }
-
-    .contact-card strong {
-      color: #2e1f1c;
-    }
-
-    .order-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .order-btn {
-      display: block;
-      text-align: center;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .messenger-btn {
-      background: #111;
-      color: #fff;
-    }
-
-    .phone-btn {
-      background: #8b1e1e;
-      color: #fff;
-    }
-
-    .gmail-btn {
-      background: #f4ede7;
-      color: #8b1e1e;
-      border: 1px solid #e0d1c3;
-    }
-
-    .footer {
-      background: #6e1313;
-      color: #f6e8de;
-      padding: 36px 0;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .footer h3 {
-      color: #f2c76c;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .footer p {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .floating-messenger {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1200;
-      background: #111;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    }
-
-    .floating-messenger:hover {
-      background: #8b1e1e;
-    }
-
-    @media (max-width: 980px) {
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .reviews-grid,
-      .contact-grid,
-      .care-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-logo-card {
-        max-width: 180px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-      }
-
-      .hero {
-        min-height: auto;
-        background-position: center;
-      }
-
-      .hero-layout {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero h2 {
-        font-size: 22px;
-      }
-
-      .about-grid,
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .floating-messenger {
-        right: 12px;
-        bottom: 12px;
-        font-size: 13px;
-        padding: 12px 15px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shwe Chuu Premium Textile</title>
+<style>
+  body{ font-family: Georgia, serif; margin:0; background:#f7efe6; color:#4a2f2a; line-height:1.6; }
+  .container{ width:92%; max-width:1200px; margin:auto; }
+  header{ background:#7d1717; color:white; padding:15px 0; position: sticky; top: 0; z-index: 1000; }
+  .nav{ display:flex; justify-content:space-between; align-items:center; }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight: bold; }
+  .logo img{ width:40px; border-radius:10px; }
+  nav a{ color:white; margin-left:15px; font-size:13px; text-decoration:none; text-transform: uppercase; }
+
+  /* Hero Section */
+  .hero{ display:grid; grid-template-columns:1fr 1fr; background:#7d1717; color:white; min-height: 400px; }
+  .hero img{ width:100%; height:100%; object-fit:cover; border-radius:0 0 0 60px; }
+  .hero-text{ padding:40px; display: flex; flex-direction: column; justify-content: center; }
+  .hero-text h1{ font-size:40px; margin-bottom:10px; line-height: 1.2; }
+  
+  .btn{ background:#d4a15d; padding:12px 24px; border-radius:30px; color:#4a2f2a; text-decoration:none; font-weight:bold; border:none; cursor:pointer; display:inline-block; }
+  .section{ padding:60px 0; }
+  .section-title{ text-align:center; font-size:28px; margin-bottom:30px; color:#8b1e1e; font-weight: bold; }
+
+  /* Grid System */
+  .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; }
+  .card{ background:white; border-radius:20px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition: 0.3s; }
+  .card:hover { transform: translateY(-5px); }
+  .card img{ width:100%; height:320px; object-fit:cover; }
+  .card-body{ padding:20px; text-align:center; }
+  .price{ font-weight:bold; color:#8b1e1e; font-size: 18px; margin: 5px 0; }
+  .note{ color:#c33; font-size:12px; font-weight: bold; }
+
+  /* Review Section Style */
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .review-card { background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .avatar img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #f7efe6; }
+  .stars { color: #d4a15d; margin-bottom: 10px; }
+
+  /* Contact & Order Buttons */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px; }
+  .contact-card { background: white; padding: 25px; border-radius: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .order-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+  .order-btn { padding: 12px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; }
+  .messenger { background: #0084ff; } .telegram { background: #0088cc; } .viber { background: #7360f2; }
+  .phone { background: #25d366; } .gmail { background: #d93025; } .youtube { background: #ff0000; }
+
+  /* Floating Button */
+  .floating-btn { position: fixed; bottom: 20px; right: 20px; background: #0084ff; color: white; padding: 15px 25px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
+
+  /* Popup */
+  .popup{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:none; align-items:center; justify-content:center; z-index: 2000; }
+  .popup-box{ background:white; padding:30px; border-radius:20px; max-width:400px; width: 90%; position: relative; text-align: center; }
+  .close{ position: absolute; top: 10px; right: 20px; cursor:pointer; font-size:25px; color: #7d1717; }
+
+  footer{ background:#6c1515; color:white; text-align:center; padding:40px 20px; margin-top: 60px; }
+  footer img { width: 60px; border-radius: 15px; margin-bottom: 15px; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero img { height: 300px; border-radius: 0; }
+    .hero-text h1 { font-size: 32px; }
+  }
+</style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container nav-wrap">
-      <div class="brand-wrap">
-        <div class="brand-logo">
-          <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png" alt="Shwe Chuu Logo">
-        </div>
-        <div class="brand-text">
-          <div class="brand-title">ရွှေခြူး</div>
-          <div class="brand-subtitle">Shwe Chuu Premium Textile</div>
-        </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#home">ပင်မ</a>
-        <a href="#about">About</a>
-        <a href="#collection">Collection</a>
-        <a href="#scarf-care">Scarf Care</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
+      <span>ရွှေခြူး</span>
     </div>
-  </header>
+    <nav>
+      <a href="#collection">Collection</a>
+      <a href="#signature">Signature</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-layout">
-        <div class="hero-logo-card">
-          <div class="hero-logo-box">
-            <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png" alt="Hero Logo">
-          </div>
-          <div class="hero-logo-text">Shwe Chuu Brand</div>
-        </div>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Royal Elegance<br>in Every Thread</h1>
+    <p>Premium Myanmar textile crafted for timeless beauty.</p>
+    <div><a class="btn" href="#collection">Shop Collection</a></div>
+  </div>
+  <img src="https://i.postimg.cc/LsZbM5kj/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
+</section>
 
-        <div class="hero-content">
-          <div class="hero-badge">Premium Myanmar Textile Brand</div>
-          <h1>ရွှေခြူး</h1>
-          <h2>Shwe Chuu Premium Textile</h2>
-          <p>
-            လက်မှုချည်ထည်ရဲ့ အရည်အသွေးကို ရွှေခြူးကနေ ခံစားလိုက်ပါ။
-            မြန်မာ့ရိုးရာအလှတရားနဲ့ ခေတ်သစ် premium vibe ကို ပေါင်းစပ်ထားတဲ့
-            အမျိုးသမီးချည်ထည် brand တစ်ခုဖြစ်ပါတယ်။
-          </p>
-          <div class="hero-buttons">
-            <a href="#collection" class="btn btn-primary">Collection ကြည့်မယ်</a>
-            <a href="#contact" class="btn btn-secondary">မှာယူမယ်</a>
-          </div>
-        </div>
-      </div>
+<section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="card"><div class="card-body"><h3>All Instock</h3><p>ယခုတင်ရောင်းထားတဲ့ items များ အကုန် instock ရှိပါသည်</p></div></div>
+      <div class="card"><div class="card-body"><h3>Elegant Design</h3><p>မြန်မာဆန်ပြီး ခေတ်သစ်ဆန်သည့် design များ</p></div></div>
+      <div class="card"><div class="card-body"><h3>Care Instructions</h3><p>ထုတ်သည့် collection တိုင်းအတွက် ထိန်းသိမ်းနည်းများ ပါဝင်သည်</p></div></div>
+      <div class="card"><div class="card-body"><h3>Easy Order</h3><p>Viber, Telegram, Messenger ကနေ အလွယ်တကူမှာယူနိုင်ပါသည်</p></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="feature-strip">
-    <div class="container feature-grid">
-      <div class="feature-card">
-        <h3>All Instock</h3>
-        <p>အခုတင်ရောင်းထားတဲ့ items များ အကုန် instock</p>
+<section class="section" id="collection">
+  <div class="container">
+    <h2 class="section-title">Apparel Collection</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg">
+        <div class="card-body">
+          <div>Shorts Co-ord Set (Navy)</div>
+          <div class="price">34,000 MMK</div>
+          <div class="note">ဒီ design အတွက်သာ Buy 2 Deli Free</div><br>
+          <button class="btn" onclick="openPopup('https://i.postimg.cc/Wb453GfB/IMG-1349.jpg')">View Detail</button>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Elegant Design</h3>
-        <p>မြန်မာဆန်ပြီး ခေတ်သစ်ဆန်တဲ့ design</p>
-      </div>
-      <div class="feature-card">
-        <h3>Scarf Care Card</h3>
-        <p>ပုဝါ collection အတွက် ထိန်းသိမ်းနည်းပါဝင်သည်</p>
-      </div>
-      <div class="feature-card">
-        <h3>Easy Order</h3>
-        <p>Messenger ကနေ အလွယ်တကူမှာယူနိုင်</p>
+      <div class="card">
+        <img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg">
+        <div class="card-body">
+          <div>Shorts Co-ord Set (Olive)</div>
+          <div class="price">34,000 MMK</div>
+          <div class="note">Instock</div><br>
+          <button class="btn" onclick="openPopup('https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg')">View Detail</button>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <section class="section" id="about">
-    <div class="container">
-      <h2 class="section-title">About Shwe Chuu</h2>
-      <p class="section-subtitle">
-        Myanmar traditional beauty meets modern premium textile style.
-      </p>
-
-      <div class="about-grid">
-        <div class="logo-card">
-          <div class="logo-box">
-            <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png" alt="Shwe Chuu Logo">
-          </div>
-          <div class="logo-caption">Shwe Chuu Brand Identity</div>
-        </div>
-
-        <div class="about-text">
-          <p>
-            <span class="highlight">ရွှေခြူး</span>သည် မြန်မာ့ရိုးရာချည်ထည်အလှကို
-            ခေတ်သစ်ဒီဇိုင်းနှင့် ပေါင်းစပ်၍ ဖန်တီးထားသော premium textile brand
-            တစ်ခုဖြစ်ပါသည်။
-          </p>
-          <p>
-            ရက္ကန်းလက်ရာများနှင့် အရည်အသွေးမြင့်ချည်သားများကို အသုံးပြုကာ
-            မိန်းကလေးတိုင်း၏ အလှကို သဘာဝဆန်စွာ ထင်ရှားစေမည့် ဒီဇိုင်းများကို
-            ဖန်တီးပေးပါသည်။
-          </p>
-          <p>
-            ရွှေခြူး၏အထည်တိုင်းတွင် မြန်မာ့ရိုးရာ၊ အရည်အသွေးနှင့်
-            အလှတရားတို့ကို ပေါင်းစပ်ထားပါသည်။
-          </p>
-          <p><span class="highlight">Everyday with Shwechuu 🛍️</span></p>
-        </div>
+<section class="section" id="signature">
+  <div class="container">
+    <h2 class="section-title">Signature Collection</h2>
+    <p style="text-align:center; margin-bottom:30px;">Botanical printing ပုဝါ collection များ အကုန် instock ဖြစ်ပြီး box + care card ပါဝင်ပါသည်</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://i.postimg.cc/bDg7jCKz/21B462C6-2451-487D-9B86-CB2BA8D77914.png">
+        <div class="card-body"><div>ဆောင်းဒါး</div><div class="price">38,500 ကျပ်</div><div class="note">Box + Care Card Included</div></div>
+      </div>
+      <div class="card">
+        <img src="https://i.postimg.cc/QKMRNg3g/41BF3925-8EE4-40FA-9E50-D194B4E75CFF.png">
+        <div class="card-body"><div>အရောင်ကူး</div><div class="price">38,500 ကျပ်</div><div class="note">Box + Care Card Included</div></div>
+      </div>
+      <div class="card">
+        <img src="https://i.postimg.cc/XBvTNKbw/IMG-3884.jpg">
+        <div class="card-body"><div>ချည်ဇာ</div><div class="price">38,500 ကျပ်</div><div class="note">Box + Care Card Included</div></div>
+      </div>
+      <div class="card">
+        <div style="height:320px; background:#eee; display:flex; align-items:center; justify-content:center;">လက်ငင်ချည် ပုံမရှိသေးပါ</div>
+        <div class="card-body"><div>လက်ငင်ချည်</div><div class="price">38,500 ကျပ်</div><div class="note">Box + Care Card Included</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="collection">
-    <div class="container">
-      <h2 class="section-title">Apparel Collection</h2>
-      <p class="section-subtitle">
-        အင်္ကျီ collection အတွက် Buy 2 Deli Free အစီအစဉ်ရှိပါသည်။
-      </p>
-
-      <div class="products-grid">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg" alt="Navy Blue Set">
-          </div>
-          <div class="product-info">
-            <div class="product-label">Premium Set</div>
-            <h3>Navy Blue Set</h3>
-            <div class="product-price">34,000 ကျပ်</div>
-            <div class="product-note">Instock • Buy 2 Deli Free</div>
-            <a href="#contact" class="product-btn">မှာယူမယ်</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg" alt="Olive Green Set">
-          </div>
-          <div class="product-info">
-            <div class="product-label">Premium Set</div>
-            <h3>Olive Green Set</h3>
-            <div class="product-price">34,000 ကျပ်</div>
-            <div class="product-note">Instock • Buy 2 Deli Free</div>
-            <a href="#contact" class="product-btn">မှာယူမယ်</a>
-          </div>
-        </div>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Customer Reviews</h2>
+    <div class="grid3">
+      <div class="review-card">
+        <div class="avatar"><img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg"></div>
+        <div class="stars">★★★★★</div>
+        <p>အထည်သားက အရမ်းကောင်းပြီး ဝတ်လိုက်ရင် classy ဖြစ်တယ်။</p>
+        <div style="font-weight:bold; color:#8b1e1e;">Happy Customer</div>
+      </div>
+      <div class="review-card">
+        <div class="avatar"><img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg"></div>
+        <div class="stars">★★★★★</div>
+        <p>မြန်မာဆန်ပြီး modern vibe ရှိတယ်။ quality ကလည်း premium feel ရတယ်။</p>
+        <div style="font-weight:bold; color:#8b1e1e;">Loyal Buyer</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="scarf-care">
-    <div class="container">
-      <h2 class="section-title">Scarf Collection & Care</h2>
-      <p class="section-subtitle">
-        ပုဝါ collection များ အကုန် instock ဖြစ်ပြီး care card ပါဝင်ပါသည်။
-      </p>
-
-      <div class="care-grid">
-        <div class="care-card">
-          <div class="info-badge">All Scarf Pieces Instock</div>
-          <h3>ပုဝါ Collection Info</h3>
-          <p>ပုဝါ collection များတွင် <strong>Botanical Printing Care Card</strong> ပါဝင်ပါသည်။</p>
-          <p>သုံးစွဲသူများအတွက် ပုဝါကို ကြာရှည်လှပစွာ အသုံးပြုနိုင်ရန် ထိန်းသိမ်းနည်းကို တစ်ပါတည်း ထည့်ပေးထားပါသည်။</p>
-          <p><strong>Included:</strong> Care Card ပါဝင်သည်</p>
-          <p><strong>Availability:</strong> Instock</p>
-        </div>
-
-        <div class="care-card">
-          <h3>ပုဝါ ထိန်းသိမ်းနည်း</h3>
-          <ul class="care-list">
-            <li>အေးသောရေဖြင့် pH-neutral ဆပ်ပြာအသုံးပြုပြီး လက်ဖြင့်ညင်သာစွာ လျှော်ပါ။</li>
-            <li>ကြာကြာမစိမ်ပါနှင့်။</li>
-            <li>နေရောင်ခြည်တိုက်ရိုက်မထိစေဘဲ အရိပ်တွင် အခြောက်ခံပါ။</li>
-            <li>မီးပူတိုက်လိုပါက အပူနိမ့်နဲ့ အတွင်းဘက်မှ တိုက်ပါ။</li>
-            <li>Natural dye အသုံးပြုထားသောကြောင့် ပထမအကြိမ်လျှော်ချိန်တွင် အရောင်အနည်းငယ်ထွက်နိုင်ပါသည်။</li>
-          </ul>
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact & Delivery</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>ဆက်သွယ်ရန်</h3>
+        <p><strong>Phone:</strong> 09 779 813 875</p>
+        <p><strong>Viber:</strong> 09 779 813 875</p>
+        <p><strong>Telegram:</strong> @shwechuu126</p>
+        <div class="order-buttons">
+          <a href="https://www.facebook.com/share/1DrPR4x94s/?mibextid=wwXIfr" class="order-btn messenger">Messenger မှမှာယူရန်</a>
+          <a href="https://t.me/shwechuucotton" class="order-btn telegram">Telegram Channel</a>
+          <a href="tel:09779813875" class="order-btn viber">Viber ဆက်သွယ်ရန်</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews">
-    <div class="container">
-      <h2 class="section-title">Customer Reviews</h2>
-      <p class="section-subtitle">
-        ရွှေခြူးကို အားပေးတဲ့ customer တွေရဲ့ အမြင်
-      </p>
-
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-avatar">
-            <img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg" alt="Review 1">
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">
-            “အထည်သားက အရမ်းကောင်းပြီး ဝတ်လိုက်ရင် classy ဖြစ်တယ်။
-            တကယ်သဘောကျပါတယ်။”
-          </div>
-          <div class="review-name">Happy Customer</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-avatar">
-            <img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg" alt="Review 2">
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">
-            “မြန်မာဆန်ပြီး modern vibe ရှိတယ်။
-            quality ကလည်း premium feel ရတယ်။”
-          </div>
-          <div class="review-name">Loyal Buyer</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-avatar">
-            <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png" alt="Review 3">
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">
-            “Design, packaging, fabric quality အကုန်သဘောကျတယ်။
-            နောက်ထပ်လည်းအားပေးဦးမယ်။”
-          </div>
-          <div class="review-name">Verified Customer</div>
-        </div>
+      <div class="contact-card">
+        <h3>Delivery Info</h3>
+        <p><strong>COD:</strong> ရန်ကုန်/မန္တလေးနှင့် အဓိကမြို့ကြီးများ အိမ်ရောက်ငွေချေရပါသည်</p>
+        <p><strong>ကားဂိတ်:</strong> နယ်မြို့များအတွက် ငွေချေပြီး ၂ ရက်အတွင်း ဂိတ်တင်ပေးပါသည်</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container">
-      <div class="cta-box">
-        <h3>Everyday with Shwechuu</h3>
-        <p>
-          မြန်မာဆန်တဲ့အလှကို premium feel နဲ့ နေ့တိုင်းဝတ်နိုင်ဖို့
-          ရွှေခြူးက ချည်ထည်တိုင်းကို စိတ်နဲ့ဖန်တီးထားပါတယ်။
-        </p>
-        <a href="#contact" class="btn btn-primary">အခုမှာယူမယ်</a>
-      </div>
-    </div>
-  </section>
+<footer>
+  <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
+  <h4>ရွှေခြူး</h4>
+  <p>© 2026 Shwe Chuu Premium Textile. All Rights Reserved.</p>
+</footer>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact & Delivery</h2>
-      <p class="section-subtitle">
-        မှာယူခြင်းနှင့် ပို့ဆောင်ရေးအချက်အလက်များ
-      </p>
+<a href="https://www.facebook.com/share/1DrPR4x94s/?mibextid=wwXIfr" class="floating-btn">Messenger မှာယူမယ်</a>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>ဆက်သွယ်ရန် အချက်အလက်</h3>
-          <div><strong>Phone:</strong> <a href="tel:09779813875">09 779 813 875</a></div>
-          <div><strong>Gmail:</strong> <a href="mailto:shwechuu126@gmail.com">shwechuu126@gmail.com</a></div>
-          <div><strong>Brand:</strong> Shwe Chuu Premium Textile</div>
-          <div><strong>Availability:</strong> Items အကုန် Instock</div>
-        </div>
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <span class="close" onclick="closePopup()">✕</span>
+    <img id="popup-img" src="" style="width:100%; border-radius:12px; margin-bottom:15px;">
+    <h3>Shwechuu Shorts Set</h3>
+    <p>🌿 Premium Quality • Instock Now</p>
+    <p>Price – 34,000 MMK</p>
+    <a href="#contact" class="btn" onclick="closePopup()">မှာယူမယ်</a>
+  </div>
+</div>
 
-        <div class="contact-card">
-          <h3>Delivery Information</h3>
-          <p><strong>COD:</strong> Delivery ရောက်သော မြို့များတွင် Cash On Delivery ဖြင့် ပို့ဆောင်ပေးပါသည်။</p>
-          <p><strong>ဂိတ်တင်:</strong> ကျန်သောနေရာများအတွက် ကားဂိတ်တင်ပို့ပေးပြီး ငွေကြိုရှင်းရန် လိုအပ်ပါသည်။</p>
-          <p><strong>Notice:</strong> Order အတည်ပြုပြီးနောက် Messenger မှ အသေးစိတ်ပြန်လည်အကြောင်းကြားပေးပါမည်။</p>
-        </div>
-      </div>
-
-      <div class="contact-grid" style="margin-top:22px;">
-        <div class="contact-card">
-          <h3>အော်ဒါတင်ရန်</h3>
-          <p>Messenger သို့မဟုတ် ဖုန်းကနေ အလွယ်တကူမှာယူနိုင်ပါတယ်။</p>
-          <div class="order-buttons">
-            <a href="https://m.me/shwechuu" class="order-btn messenger-btn">MESSENGER မှ မှာယူရန်</a>
-            <a href="tel:09779813875" class="order-btn phone-btn">PHONE ဖြင့် ဆက်သွယ်ရန်</a>
-            <a href="mailto:shwechuu126@gmail.com" class="order-btn gmail-btn">GMAIL ဖြင့် ဆက်သွယ်ရန်</a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>Order Notes</h3>
-          <p>အင်္ကျီ collection တွင် <strong>Buy 2 Deli Free</strong> အစီအစဉ်ရှိပါသည်။</p>
-          <p>ပုဝါ collection အတွက် <strong>Botanical Printing Care Card</strong> ပါဝင်ပါသည်။</p>
-          <p>အသေးစိတ်အော်ဒါအချက်အလက်များကို Messenger မှ တိုက်ရိုက်မေးမြန်းနိုင်ပါသည်။</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <h3>ရွှေခြူး</h3>
-      <p>Shwe Chuu Premium Textile</p>
-      <p>Premium Myanmar Textile • Everyday with Shwechuu</p>
-      <p>© 2026 Shwe Chuu. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <a href="https://m.me/shwechuu" class="floating-messenger">Messenger မှာယူမယ်</a>
+<script>
+  function openPopup(imgSrc){ document.getElementById("popup").style.display = "flex"; document.getElementById("popup-img").src = imgSrc; }
+  function closePopup(){ document.getElementById("popup").style.display = "none"; }
+</script>
 
 </body>
 </html>
