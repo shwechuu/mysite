@@ -23,13 +23,18 @@
   
   .info-box { background: white; padding: 30px; border-radius: 18px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); font-size: 16px; line-height: 1.8; max-width: 850px; margin: 0 auto; text-align: center; }
   .info-box p { margin-bottom: 15px; }
-  .lang-en { display: block; font-style: italic; color: #666; font-size: 15px; margin-top: 4px; }
+  .lang-en { display: block; font-style: italic; color: #666; font-size: 14px; margin-top: 4px; }
 
   .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
   .product-card { background: #fff; border-radius: 15px; overflow: hidden; text-align: center; border: 1px solid #eaded3; }
   .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; display: block; }
   .product-info { padding: 10px; }
   .price { font-weight: bold; color: #3d2b27; font-size: 16px; margin-top: 5px; }
+
+  /* Review Section */
+  .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+  .review-card { background: #fff; padding: 20px; border-radius: 15px; border-left: 5px solid #a06b13; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+  .stars { color: #f1c40f; font-size: 18px; margin-bottom: 8px; }
 
   .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; }
   .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; margin-top: 10px; }
@@ -39,10 +44,10 @@
   
   .popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
   .popup-box { background: white; padding: 35px 25px; border-radius: 25px; max-width: 420px; width: 100%; position: relative; text-align: center; overflow-y: auto; max-height: 90vh; }
-  .popup-box h3 { color: #2d5a27; margin-bottom: 10px; }
   .popup-box img { width: 100%; border-radius: 15px; margin-top: 20px; }
   .close { position: absolute; right: 20px; top: 15px; font-size: 22px; cursor: pointer; color: #888; }
 
+  .thank-you-note { background: #fdf2f2; padding: 30px; text-align: center; border-radius: 20px; margin: 40px auto; max-width: 800px; border: 1px dashed #8b1e1e; }
   footer { background: #6e1313; color: #f6e8de; padding: 30px 0; text-align: center; }
 </style>
 </head>
@@ -68,38 +73,29 @@
     <h2 class="section-title">Brand Story</h2>
     <div class="info-box">
       <p><strong>ရွှေခြူး | Shwe Chuu</strong></p>
-      <p>ရွှေခြူးသည် မြန်မာ့ရိုးရာချည်ထည်အလှကို ခေတ်သစ်ဒီဇိုင်းနှင့် ပေါင်းစပ်ဖန်တီးထားသော premium textile brand တစ်ခုဖြစ်ပါသည်။
-         <span class="lang-en">Shwe Chuu is a premium textile brand that blends traditional Myanmar weaving with modern design.</span>
-      </p>
-      <p>ရက္ကန်းလက်ရာများနှင့် အရည်အသွေးမြင့်ချည်သားများကို အသုံးပြုကာ မိန်းကလေးတိုင်း၏ အလှကို သဘာဝဆန်စွာ ထင်ရှားစေမည့် ဒီဇိုင်းများကို ဖန်တီးပေးပါသည်။
-         <span class="lang-en">We use high-quality cotton and craftsmanship to create designs that highlight natural beauty.</span>
-      </p>
-      <p>ရွှေခြူး၏အထည်တိုင်းတွင် မြန်မာ့ရိုးရာ၊ အရည်အသွေးနှင့် အလှတရားတို့ကို ပေါင်းစပ်ထားပါသည်။
-         <span class="lang-en">Every piece from Shwe Chuu is a perfect blend of tradition, quality, and elegance.</span>
-      </p>
+      <p>ရွှေခြူးသည် မြန်မာ့ရိုးရာချည်ထည်အလှကို ခေတ်သစ်ဒီဇိုင်းနှင့် ပေါင်းစပ်ဖန်တီးထားသော premium textile brand တစ်ခုဖြစ်ပါသည်။ <span class="lang-en">Shwe Chuu blends traditional Myanmar weaving with modern design.</span></p>
+      <p>ရက္ကန်းလက်ရာများနှင့် အရည်အသွေးမြင့်ချည်သားများကို အသုံးပြုကာ မိန်းကလေးတိုင်း၏ အလှကို သဘာဝဆန်စွာ ထင်ရှားစေမည့် ဒီဇိုင်းများကို ဖန်တီးပေးပါသည်။ <span class="lang-en">Crafting designs that naturally highlight every woman's beauty.</span></p>
     </div>
   </div>
 </section>
 
 <section class="section" id="collection">
     <div class="container">
-        <h2 class="section-title">Apparel Collection</h2>
+        <h2 class="section-title">Collections</h2>
         <div class="grid">
             <div class="product-card">
                 <img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg" onclick="openLightbox(this.src)">
                 <div class="product-info">
-                    <div style="font-size: 14px;">Shorts Co-ord Set (Navy)</div>
+                    <div>Shorts Co-ord Set (Navy)</div>
                     <div class="price">34,000 ကျပ်</div>
-                    <p style="color:#c33; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg" onclick="openLightbox(this.src)">
                 <div class="product-info">
-                    <div style="font-size: 14px;">Shorts Co-ord Set (Olive)</div>
+                    <div>Shorts Co-ord Set (Olive)</div>
                     <div class="price">34,000 ကျပ်</div>
-                    <p style="color:#c33; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
@@ -108,59 +104,29 @@
 </section>
 
 <section class="section">
-    <div class="container">
-        <h2 class="section-title">Signature Collection</h2>
-        <div class="grid">
-            <div class="product-card">
-                <img src="https://i.postimg.cc/QC54Wdxw/41BF3925-8EE4-40FA-9E50-D194B4E75CFF.png" onclick="openLightbox(this.src)">
-                <div class="product-info"><div style="font-size: 12px;">အရောင်ကူး</div><div class="price">38,500 ကျပ်</div></div>
-            </div>
-            <div class="product-card">
-                <img src="https://i.postimg.cc/7Y0d5mfB/IMG-3884.jpg" onclick="openLightbox(this.src)">
-                <div class="product-info"><div style="font-size: 12px;">ချည်ဇာ</div><div class="price">33,500 ကျပ်</div></div>
-            </div>
-            <div class="product-card">
-                <img src="https://i.postimg.cc/T3bSWQhL/21B462C6-2451-487D-9B86-CB2BA8D77914.png" onclick="openLightbox(this.src)">
-                <div class="product-info"><div style="font-size: 12px;">ဆောင်းဒါး</div><div class="price">30,000 ကျပ်</div></div>
-            </div>
-            <div class="product-card">
-                <img src="https://i.postimg.cc/m2fR41pB/IMG-3881.jpg" onclick="openLightbox(this.src)">
-                <div class="product-info"><div style="font-size: 12px;">လက်ငင်ချည်</div><div class="price">38,500 ကျပ်</div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
   <div class="container">
-    <h2 class="section-title">Delivery Information</h2>
-    <div class="info-box">
-      <p>Delivery ရောက်နိုင်သော မြို့များတွင် <strong>Cash On Delivery (COD)</strong> ဖြင့် ပို့ဆောင်ပေးပါသည်။
-         <span class="lang-en">We offer Cash On Delivery (COD) in available cities.</span>
-      </p>
-      <p>Delivery မရောက်သော မြို့များအတွက် <strong>ကားဂိတ်တင်ပို့ပေးပြီး ငွေကြိုရှင်းရန် လိုအပ်ပါသည်။</strong>
-         <span class="lang-en">For other regions, pre-payment is required and we will ship via bus station.</span>
-      </p>
-      <p>Order အတည်ပြုပြီးနောက် အသေးစိတ်ပို့ဆောင်ရေးအချက်အလက်များကို ပြန်လည်အကြောင်းကြားပေးပါမည်။
-         <span class="lang-en">Detailed shipping info will be provided after order confirmation.</span>
-      </p>
+    <h2 class="section-title">Customer Reviews</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"အထည်သားလေးက အေးပြီး ဝတ်လို့အရမ်းကောင်းပါတယ်။ ဒီဇိုင်းလေးကလည်း ဆန်းတယ်!"</p>
+        <div style="margin-top:10px; font-weight:bold; font-size:14px;">- မစန္ဒီ</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Deli လည်း မြန်တယ်၊ ပါကင်လေးကအစ သေသေချာချာလေး ထုပ်ပေးထားတာ သဘောကျပါတယ်။"</p>
+        <div style="margin-top:10px; font-weight:bold; font-size:14px;">- မနဒီ</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Order Notes</h2>
+    <h2 class="section-title">Service Info</h2>
     <div class="info-box">
-      <p>ရွှေခြူးမှာ တန်၊ လှ၊ ဝတ်ချင်စရာကောင်းတဲ့ promotion များစွာ အမြဲရှိနေပါတယ်။
-         <span class="lang-en">Shwe Chuu always offers great value promotions and beautiful designs.</span>
-      </p>
-      <p>Instock items များကို အမြန်ဆုံးပို့ဆောင်ပေးပြီး care instructions များလည်း ပါဝင်ပါသည်။
-         <span class="lang-en">In-stock items are shipped quickly with care instructions included.</span>
-      </p>
-      <p>Messenger / Telegram / Viber မှ တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။
-         <span class="lang-en">Contact us directly via Messenger, Telegram, or Viber to order.</span>
-      </p>
+      <p><strong>Delivery:</strong> Cash On Delivery (COD) available in major cities. <span class="lang-en">Available in selected cities.</span></p>
+      <p><strong>Order:</strong> Fast shipping for instock items. <span class="lang-en">Quick delivery for ready stock.</span></p>
     </div>
   </div>
 </section>
@@ -168,37 +134,32 @@
 <section class="section" id="contact">
     <div class="container">
         <div class="section-title">📞 CONTACT US</div>
-        
-        <div style="padding: 25px; text-align: left; font-size: 15px; background: #fff; line-height: 2.2; border-radius: 15px; border: 1px solid #eaded3; margin-bottom: 20px;">
-            <div><strong>Facebook:</strong> <a href="https://www.facebook.com/61580201721195" target="_blank" style="color: #1877F2; text-decoration: none;">Shwe Chuu Page</a></div>
-            <div><strong>Viber:</strong> <a href="https://connect.viber.com/business/9c0d4aa2-f5d6-11f0-b20d-52cfee22cfe8" target="_blank" style="color: #7360f2; text-decoration: none;">09 779 813 875</a></div>
-            <div><strong>Gmail:</strong> <a href="mailto:shwechuu126@gmail.com" style="color: #d93025; text-decoration: none;">shwechuu126@gmail.com</a></div>
-            <div><strong>Telegram:</strong> <a href="https://t.me/shwechuu126" target="_blank" style="color: #0088cc; text-decoration: none;">@shwechuu126</a></div>
+        <div style="padding: 25px; background: #fff; border-radius: 15px; border: 1px solid #eaded3; margin-bottom: 20px;">
+            <div><strong>Facebook:</strong> <a href="https://www.facebook.com/61580201721195" target="_blank" style="color: #1877F2;">Shwe Chuu Page</a></div>
+            <div><strong>Gmail:</strong> <a href="mailto:shwechuu126@gmail.com" style="color: #d93025;">shwechuu126@gmail.com</a></div>
+            <div><strong>Viber:</strong> 09 779 813 875</div>
         </div>
-
-        <div style="padding-bottom: 40px;">
-            <a href="https://m.me/61580201721195" class="btn" style="background: #000;">MESSENGER မှ မှာယူရန် (Shop Now)</a>
-            <a href="https://t.me/shwechuucotton" class="btn" style="background: #0088cc;">JOIN TELEGRAM CHANNEL</a>
-            <a href="https://youtube.com/channel/UCe5KXMg6iL-I2Jkmib7hllw?si=dIe3iD9QuMCeRmbv" class="btn" style="background: #ff0000;">SUBSCRIBE YOUTUBE</a>
-        </div>
+        <a href="https://m.me/61580201721195" class="btn" style="background: #000;">MESSENGER (Shop Now)</a>
     </div>
 </section>
+
+<div class="container">
+  <div class="thank-you-note">
+    <p>"ကျွန်တော်တို့ရဲ့ ခရီးစဉ်မှာ အတူတူ လျှောက်လှမ်းပေးလို့ ကျေးဇူးအများကြီး တင်ပါတယ်။ ဝယ်သူတွေရဲ့ ယုံကြည်မှုနဲ့ စိတ်ကျေနပ်မှုဟာ ကျွန်တော်တို့အတွက် အဖိုးတန်ဆုံး ဆုလာဘ်ပါပဲ။ ပိုမိုကောင်းမွန်တဲ့ ဝန်ဆောင်မှုတွေနဲ့အတူ အမြဲစောင့်ကြိုနေပါမယ်။"</p>
+    <p class="lang-en" style="margin-top:10px;">"Thank you for being part of our journey. Your trust and satisfaction are our greatest rewards. We look forward to serving you even better."</p>
+  </div>
+</div>
 
 <footer><p>© 2026 Shwe Chuu Premium Textile</p></footer>
 
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'"><img id="zoom-img"></div>
-
 <div class="popup" id="popup">
   <div class="popup-box">
     <span class="close" onclick="closePopup()">✕</span>
-    <h3>🏷 🌿 Simple • Natural • Comfortable</h3>
-    <p><strong>Shwechuu | Shorts Co-ord Set</strong></p>
-    <p>Designed for comfort, styled for everyday wear.</p>
-    <p style="margin: 10px 0;">Sizes – S / M / L</p>
-    <p><strong>Price – 34,000 MMK</strong></p>
-    <p style="color:#c33; font-weight:bold; margin-top: 5px;">Buy 2 - Free Delivery</p>
+    <h3>🏷 Shwechuu Co-ord Set</h3>
+    <p>Sizes – S / M / L | Price – 34,000 MMK</p>
     <img src="https://i.postimg.cc/mZHV2kn3/Beige-Elegant-Simple-Size-Chart-Instagram-Post.png">
-    <a href="https://m.me/61580201721195" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order Now)</a>
+    <a href="https://m.me/61580201721195" class="btn" style="background:#8b1e1e; margin-top: 20px;">Order Now</a>
   </div>
 </div>
 
