@@ -5,45 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ရွှေခြူး | Shwe Chuu Premium Textile</title>
 <style>
-  /* Base Styles */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Georgia', serif; background: #faf7f3; color: #3d2b27; line-height: 1.7; }
   .container { width: 92%; max-width: 1180px; margin: 0 auto; }
   
-  /* Header & Hero */
   header { background: rgba(255, 250, 246, 0.96); border-bottom: 1px solid #eaded3; position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
   .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
   .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .brand-logo img { width: 48px; height: 48px; border-radius: 12px; }
   .brand-title { color: #a06b13; font-size: 22px; font-weight: 800; }
-  nav a { color: #8b1e1e; margin-left: 15px; text-decoration: none; font-size: 14px; font-weight: bold; text-transform: uppercase; }
 
   .hero { background: #7c1414; color: white; padding: 60px 0; text-align: center; }
   .hero img { max-width: 100%; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-  .hero h1 { font-size: 36px; margin-bottom: 10px; color: #f2c76c; }
 
-  /* Section Styling */
   .section { padding: 40px 0; }
   .section-title { text-align: center; font-size: 24px; color: #8b1e1e; margin-bottom: 30px; font-weight: bold; text-transform: uppercase; }
   
+  .info-box { background: white; padding: 30px; border-radius: 18px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); font-size: 17px; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: center; }
+  .info-box p { margin-bottom: 15px; }
+
+  /* Product Grid & Images */
   .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
   .product-card { background: #fff; border-radius: 15px; overflow: hidden; text-align: center; border: 1px solid #eaded3; }
-  .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; }
+  .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; display: block; }
   .product-info { padding: 10px; }
   .price { font-weight: bold; color: #3d2b27; font-size: 16px; margin-top: 5px; }
 
-  /* Buttons Style */
-  .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; transition: 0.3s; }
-  .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; }
+  .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; }
+  .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; margin-top: 10px; }
 
-  /* Lightbox & Popup */
-  .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; align-items: center; justify-content: center; }
-  .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 10px; }
+  /* Lightbox (Zoom) - ကြည်လင်အောင် ပြင်ဆင်ထားသော အပိုင်း */
+  .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; overflow: hidden; }
+  .lightbox img { max-width: 95%; max-height: 90vh; border-radius: 5px; object-fit: contain; }
   
   .popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
-  .popup-box { background: white; padding: 30px; border-radius: 25px; max-width: 420px; width: 100%; position: relative; text-align: center; }
-  .popup-box img { width: 100%; border-radius: 15px; margin-top: 15px; }
-  .close-btn { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; color: #8b1e1e; }
+  .popup-box { background: white; padding: 35px 25px; border-radius: 25px; max-width: 420px; width: 100%; position: relative; text-align: center; overflow-y: auto; max-height: 90vh; }
+  .popup-box img { width: 100%; border-radius: 15px; margin-top: 20px; }
+  .close { position: absolute; right: 20px; top: 15px; font-size: 22px; cursor: pointer; color: #888; }
 
   footer { background: #6e1313; color: #f6e8de; padding: 30px 0; text-align: center; }
 </style>
@@ -56,19 +54,27 @@
             <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
             <div class="brand-title">ရွှေခြူး</div>
         </a>
-        <nav><a href="#contact">Contact</a></nav>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <h1>Royal Myanmar Textile</h1>
         <img src="https://i.postimg.cc/LsZbM5kj/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
-        <p>Premium Myanmar Textile Brand</p>
     </div>
 </section>
 
-<section class="section" id="collection">
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Brand Story</h2>
+    <div class="info-box">
+      <p><strong>ရွှေခြူး | Shwe Chuu</strong></p>
+      <p>ရွှေခြူးသည် မြန်မာ့ရိုးရာချည်ထည်အလှကို ခေတ်သစ်ဒီဇိုင်းနှင့် ပေါင်းစပ်ဖန်တီးထားသော premium textile brand တစ်ခုဖြစ်ပါသည်။</p>
+      <p>ရက္ကန်းလက်ရာများနှင့် အရည်အသွေးမြင့်ချည်သားများကို အသုံးပြုကာ မိန်းကလေးတိုင်း၏ အလှကို သဘာဝဆန်စွာ ထင်ရှားစေမည့် ဒီဇိုင်းများကို ဖန်တီးပေးပါသည်။</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
     <div class="container">
         <h2 class="section-title">Apparel Collection</h2>
         <div class="grid">
@@ -77,7 +83,7 @@
                 <div class="product-info">
                     <div style="font-size: 14px;">Shorts Co-ord Set (Navy)</div>
                     <div class="price">34,000 ကျပ်</div>
-                    <p style="color:red; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
+                    <p style="color:#c33; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
@@ -86,6 +92,7 @@
                 <div class="product-info">
                     <div style="font-size: 14px;">Shorts Co-ord Set (Olive)</div>
                     <div class="price">34,000 ကျပ်</div>
+                    <p style="color:#c33; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
@@ -119,7 +126,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://via.placeholder.com/300?text=Shwe+Chuu" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/m2fR41pB/IMG-3881.jpg" onclick="openLightbox(this.src)">
                 <div class="product-info">
                     <div style="font-size: 12px;">လက်ငင်ချည်</div>
                     <div class="price">38,500 ကျပ်</div>
@@ -127,6 +134,26 @@
             </div>
         </div>
     </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Delivery Information</h2>
+    <div class="info-box">
+      <p>Delivery ရောက်နိုင်သော မြို့များတွင် <strong>Cash On Delivery (COD)</strong> ဖြင့် ပို့ဆောင်ပေးပါသည်။</p>
+      <p>Delivery မရောက်သော မြို့များအတွက် <strong>ကားဂိတ်တင်ပို့ပေးပြီး ငွေကြိုရှင်းရန် လိုအပ်ပါသည်။</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Order Notes</h2>
+    <div class="info-box">
+      <p>ရွှေခြူးမှာ တန်၊ လှ၊ ဝတ်ချင်စရာကောင်းတဲ့ promotion များစွာ အမြဲရှိနေပါတယ်။</p>
+      <p>သင့်အတွက်သင့်တော်သော design ကို ရွေးချယ်ပြီး Messenger / Telegram / Viber မှ တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါသည်။</p>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="contact">
@@ -143,28 +170,34 @@
         <div style="padding-bottom: 40px;">
             <a href="https://t.me/shwechuucotton" class="btn" style="background: #0088cc;">JOIN TELEGRAM CHANNEL</a>
             <a href="https://youtube.com/channel/UCe5KXMg6iL-I2Jkmib7hllw?si=dIe3iD9QuMCeRmbv" class="btn" style="background: #ff0000;">SUBSCRIBE YOUTUBE</a>
-            <a href="https://m.me/shwechuu" class="btn" style="background: #000;">MESSENGER မှ မှာယူရန်</a>
+            <a href="https://m.me/103980181180237" class="btn" style="background: #000;">MESSENGER မှ မှာယူရန်</a>
         </div>
     </div>
 </section>
 
-<footer>
-    <p>© 2026 Shwe Chuu Premium Textile</p>
-</footer>
+<footer><p>© 2026 Shwe Chuu Premium Textile</p></footer>
 
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'"><img id="zoom-img"></div>
-<div id="popup" class="popup">
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+  <img id="zoom-img" src="">
+</div>
+
+<div class="popup" id="popup">
   <div class="popup-box">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-    <h3 style="color:#8b1e1e;">🏷 Size Chart</h3>
+    <span class="close" onclick="closePopup()">✕</span>
+    <h3>🏷 🌿 Simple • Natural • Comfortable</h3>
+    <p><strong>Shwechuu | Shorts Co-ord Set</strong></p>
+    <p>Price – 34,000 MMK</p>
+    <p style="color:#c33; font-weight:bold;">Buy 2 Deli Free</p>
     <img src="https://i.postimg.cc/mZHV2kn3/Beige-Elegant-Simple-Size-Chart-Instagram-Post.png">
-    <br><br>
-    <a href="https://m.me/shwechuu" class="btn" style="background:#8b1e1e; margin:0;">အခုပဲမှာယူမယ်</a>
+    <a href="https://m.me/103980181180237" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ်</a>
   </div>
 </div>
 
 <script>
-    function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('zoom-img').src = src; }
+    function openLightbox(src) {
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('zoom-img').src = src;
+    }
     function openPopup() { document.getElementById("popup").style.display = "flex"; }
     function closePopup() { document.getElementById("popup").style.display = "none"; }
 </script>
