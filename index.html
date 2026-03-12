@@ -23,46 +23,29 @@
   .hero h1 { font-size: 36px; margin-bottom: 10px; color: #f2c76c; }
 
   /* Section Styling */
-  .section { padding: 60px 0; }
-  .section-title { text-align: center; font-size: 32px; color: #8b1e1e; margin-bottom: 40px; font-weight: 800; }
+  .section { padding: 40px 0; }
+  .section-title { text-align: center; font-size: 24px; color: #8b1e1e; margin-bottom: 30px; font-weight: bold; text-transform: uppercase; }
   
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-  
-  /* Card Styling */
-  .product-card { background: #fff; border: 1px solid #eaded3; border-radius: 26px; overflow: hidden; text-align: center; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-  .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .product-card { background: #fff; border-radius: 15px; overflow: hidden; text-align: center; border: 1px solid #eaded3; }
   .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; }
-  .product-info { padding: 20px; }
-  .price { font-size: 20px; font-weight: 800; color: #8b1e1e; margin: 10px 0; }
-  
-  .btn-detail { background: #8b1e1e; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-  .btn-detail:hover { background: #a06b13; }
+  .product-info { padding: 10px; }
+  .price { font-weight: bold; color: #3d2b27; font-size: 16px; margin-top: 5px; }
 
-  /* Contact Card */
-  .contact-card { background: white; padding: 35px; border-radius: 26px; border: 1px solid #eaded3; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-  .contact-card p { margin-bottom: 15px; font-size: 17px; }
-  .contact-card a { color: #8b1e1e; text-decoration: none; font-weight: bold; border-bottom: 1px solid transparent; transition: 0.3s; }
-  .contact-card a:hover { border-bottom: 1px solid #8b1e1e; }
+  /* Buttons Style */
+  .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; transition: 0.3s; }
+  .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; }
 
-  /* Popups & Lightbox */
+  /* Lightbox & Popup */
   .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; align-items: center; justify-content: center; }
   .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 10px; }
   
   .popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
   .popup-box { background: white; padding: 30px; border-radius: 25px; max-width: 420px; width: 100%; position: relative; text-align: center; }
   .popup-box img { width: 100%; border-radius: 15px; margin-top: 15px; }
-  .close-btn { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; color: #8b1e1e; font-weight: bold; }
+  .close-btn { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; color: #8b1e1e; }
 
-  /* Messenger Button */
-  .floating-messenger { position: fixed; right: 25px; bottom: 25px; background: #0084ff; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 1000; transition: 0.3s; }
-  .floating-messenger:hover { transform: scale(1.05); }
-
-  footer { background: #6e1313; color: #f6e8de; padding: 40px 0; text-align: center; margin-top: 40px; }
-
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 28px; }
-    .brand-title { font-size: 18px; }
-  }
+  footer { background: #6e1313; color: #f6e8de; padding: 30px 0; text-align: center; }
 </style>
 </head>
 <body>
@@ -73,10 +56,7 @@
             <img src="https://i.postimg.cc/Dy7tc4Yv/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
             <div class="brand-title">ရွှေခြူး</div>
         </a>
-        <nav>
-          <a href="#collection">Collection</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <nav><a href="#contact">Contact</a></nav>
     </div>
 </header>
 
@@ -84,7 +64,7 @@
     <div class="container">
         <h1>Royal Myanmar Textile</h1>
         <img src="https://i.postimg.cc/LsZbM5kj/95126843-1395-44DB-90BA-CBD1CC6E66D9.png">
-        <p>Premium Myanmar Textile Brand - Everyday with Shwechuu</p>
+        <p>Premium Myanmar Textile Brand</p>
     </div>
 </section>
 
@@ -95,18 +75,17 @@
             <div class="product-card">
                 <img src="https://i.postimg.cc/Wb453GfB/IMG-1349.jpg" onclick="openLightbox(this.src)">
                 <div class="product-info">
-                    <h3>Shorts Co-ord Set (Navy)</h3>
+                    <div style="font-size: 14px;">Shorts Co-ord Set (Navy)</div>
                     <div class="price">34,000 ကျပ်</div>
-                    <p style="color:red; font-weight:bold; margin-bottom: 15px;">Buy 2 Deli Free</p>
+                    <p style="color:red; font-size: 12px; font-weight:bold;">Buy 2 Deli Free</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/2yYH7Ryr/IMG-1355.jpg" onclick="openLightbox(this.src)">
                 <div class="product-info">
-                    <h3>Shorts Co-ord Set (Olive)</h3>
+                    <div style="font-size: 14px;">Shorts Co-ord Set (Olive)</div>
                     <div class="price">34,000 ကျပ်</div>
-                    <p style="color:transparent; margin-bottom: 15px;">-</p>
                     <button class="btn-detail" onclick="openPopup()">View Detail</button>
                 </div>
             </div>
@@ -119,16 +98,32 @@
         <h2 class="section-title">Signature Collection</h2>
         <div class="grid">
             <div class="product-card">
-                <img src="https://i.postimg.cc/bDg7jCKz/21B462C6-2451-487D-9B86-CB2BA8D77914.png" onclick="openLightbox(this.src)">
-                <div class="product-info"><h3>ဆောင်းဒါး</h3><div class="price">30,000 ကျပ်</div></div>
-            </div>
-            <div class="product-card">
                 <img src="https://i.postimg.cc/QKMRNg3g/41BF3925-8EE4-40FA-9E50-D194B4E75CFF.png" onclick="openLightbox(this.src)">
-                <div class="product-info"><h3>အရောင်ကူး</h3><div class="price">38,500 ကျပ်</div></div>
+                <div class="product-info">
+                    <div style="font-size: 12px;">အရောင်ကူး</div>
+                    <div class="price">38,500 ကျပ်</div>
+                </div>
             </div>
             <div class="product-card">
                 <img src="https://i.postimg.cc/XBvTNKbw/IMG-3884.jpg" onclick="openLightbox(this.src)">
-                <div class="product-info"><h3>ချည်ဇာ</h3><div class="price">33,500 ကျပ်</div></div>
+                <div class="product-info">
+                    <div style="font-size: 12px;">ချည်ဇာ</div>
+                    <div class="price">33,500 ကျပ်</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.postimg.cc/bDg7jCKz/21B462C6-2451-487D-9B86-CB2BA8D77914.png" onclick="openLightbox(this.src)">
+                <div class="product-info">
+                    <div style="font-size: 12px;">ဆောင်းဒါး</div>
+                    <div class="price">30,000 ကျပ်</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300?text=Shwe+Chuu" onclick="openLightbox(this.src)">
+                <div class="product-info">
+                    <div style="font-size: 12px;">လက်ငင်ချည်</div>
+                    <div class="price">38,500 ကျပ်</div>
+                </div>
             </div>
         </div>
     </div>
@@ -136,53 +131,42 @@
 
 <section class="section" id="contact">
     <div class="container">
-        <h2 class="section-title">Contact & Delivery</h2>
-        <div class="contact-card">
-            <p><b>Phone:</b> <a href="tel:09779813875">09 779 813 875</a></p>
-            <p><b>Messenger:</b> <a href="https://m.me/shwechuu">Message on Facebook</a></p>
-            <p><b>YouTube:</b> <a href="https://youtube.com/@shwechuu126" target="_blank">Official Channel</a></p>
-            <p><b>Telegram:</b> <a href="https://t.me/shwechuucotton">Join Telegram Channel</a></p>
-            <br>
-            <p style="background: #fdf2f2; padding: 15px; border-radius: 15px; border-left: 5px solid #8b1e1e;">
-                🚛 <b>Delivery:</b> ရန်ကုန်/မန္တလေး COD ရပါတယ်။ ကျန်သောမြို့များအတွက် ငွေကြိုရှင်းစနစ်ဖြင့် ကားဂိတ်တင်ပေးပါသည်။
-            </p>
+        <div class="section-title">📞 CONTACT US</div>
+        
+        <div style="padding: 25px; text-align: left; font-size: 15px; background: #fff; line-height: 2.2; border-radius: 15px; border: 1px solid #eaded3; margin-bottom: 20px;">
+            <div><strong>Phone:</strong> <a href="tel:09779813875" style="color: #000; text-decoration: none;">09 779 813 875</a></div>
+            <div><strong>Viber:</strong> <a href="viber://chat?number=959779813875" style="color: #7360f2; text-decoration: none;">09 779 813 875</a></div>
+            <div><strong>Gmail:</strong> <a href="mailto:shwechuu126@gmail.com" style="color: #d93025; text-decoration: none;">shwechuu126@gmail.com</a></div>
+            <div><strong>Telegram:</strong> <a href="https://t.me/shwechuu126" style="color: #0088cc; text-decoration: none;">@shwechuu126</a></div>
+        </div>
+
+        <div style="padding-bottom: 40px;">
+            <a href="https://t.me/shwechuucotton" class="btn" style="background: #0088cc;">JOIN TELEGRAM CHANNEL</a>
+            <a href="https://youtube.com/channel/UCe5KXMg6iL-I2Jkmib7hllw?si=dIe3iD9QuMCeRmbv" class="btn" style="background: #ff0000;">SUBSCRIBE YOUTUBE</a>
+            <a href="https://m.me/shwechuu" class="btn" style="background: #000;">MESSENGER မှ မှာယူရန်</a>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Shwe Chuu Premium Textile. All Rights Reserved.</p>
-    <p>Everyday with Shwechuu</p>
+    <p>© 2026 Shwe Chuu Premium Textile</p>
 </footer>
 
-<a href="https://m.me/shwechuu" class="floating-messenger">Messenger မှာယူမယ်</a>
-
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-    <img id="zoom-img">
-</div>
-
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'"><img id="zoom-img"></div>
 <div id="popup" class="popup">
   <div class="popup-box">
     <span class="close-btn" onclick="closePopup()">&times;</span>
-    <h3 style="color: #8b1e1e;">🏷 Shorts Co-ord Set</h3>
-    <p>Premium Quality • Everyday Wear</p>
+    <h3 style="color:#8b1e1e;">🏷 Size Chart</h3>
     <img src="https://i.postimg.cc/mZHV2kn3/Beige-Elegant-Simple-Size-Chart-Instagram-Post.png">
     <br><br>
-    <button class="btn-detail" style="width: 100%;" onclick="window.location.href='#contact'; closePopup();">အခုပဲမှာယူမယ်</button>
+    <a href="https://m.me/shwechuu" class="btn" style="background:#8b1e1e; margin:0;">အခုပဲမှာယူမယ်</a>
   </div>
 </div>
 
 <script>
-    function openLightbox(src) {
-        document.getElementById('lightbox').style.display = 'flex';
-        document.getElementById('zoom-img').src = src;
-    }
-    function openPopup() {
-        document.getElementById("popup").style.display = "flex";
-    }
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+    function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('zoom-img').src = src; }
+    function openPopup() { document.getElementById("popup").style.display = "flex"; }
+    function closePopup() { document.getElementById("popup").style.display = "none"; }
 </script>
 
 </body>
