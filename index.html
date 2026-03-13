@@ -30,7 +30,7 @@
   .stars { color: #f1c40f; font-size: 18px; margin-bottom: 8px; }
   .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; text-decoration: none; color: white; text-align: center; font-weight: bold; font-size: 14px; margin: 10px 0; }
   .btn-detail { background: #8b1e1e; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; color: white; margin-top: 10px; }
-  .btn-interaction { background: #a06b13; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 15px; transition: 0.3s; }
+  .btn-interaction { background: #a06b13; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 15px; transition: 0.3s; border: none; }
   .btn-interaction:hover { background: #8b5d10; transform: scale(1.05); }
   .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; }
   .lightbox img { max-width: 95%; max-height: 90vh; border-radius: 5px; object-fit: contain; }
@@ -161,7 +161,7 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 25px;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIS1iyRYXWph3d6T9Ut5D8am54VdqV3_BMnwUbTT1CpqB5pQ/viewform?usp=header" target="_blank" class="btn-interaction">✍️ Write a Review (မှတ်ချက်ပေးရန်)</a>
+      <a href="https://forms.gle/p9p9DLFTWZGpUiUW9" target="_blank" class="btn-interaction">✍️ Write a Review (မှတ်ချက်ပေးရန်)</a>
     </div>
   </div>
 </section>
@@ -173,7 +173,7 @@
       <p>Delivery ရောက်နိုင်သော မြို့များတွင် <strong>Cash On Delivery (COD)</strong> ဖြင့် ပို့ဆောင်ပေးပါသည်။ <span class="lang-en">COD available in major cities.</span></p>
       <p>အောက်ပါ Order Form တွင် အချက်အလက်များဖြည့်သွင်း၍ လွယ်ကူစွာ မှာယူနိုင်ပါသည်။ <span class="lang-en">Fill out the form below to place your order easily.</span></p>
       
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGqOWUWkAOEbT9JDCgLUWwQV-XlnXS6A-nYNx8UaEzBcc03w/viewform?usp=header" target="_blank" class="btn-interaction" style="background: #8b1e1e;">📝 Fill Order Form (မှာယူရန် ဖောင်ဖြည့်ပါ)</a>
+      <a href="https://forms.gle/8Wdii9L16Ra6fbwF6" target="_blank" class="btn-interaction" style="background: #8b1e1e;">📝 Fill Order Form (မှာယူရန် ဖောင်ဖြည့်ပါ)</a>
     </div>
   </div>
 </section>
@@ -221,22 +221,20 @@
     <span class="close" onclick="closePopup()">✕</span>
     <h3 style="color: #2d5a27;" id="popup-title">🏷 🌿 Simple • Natural • Comfortable</h3>
     <p><strong>Shwechuu | <span id="popup-product-name">Shorts Co-ord Set</span></strong></p>
-    <p style="margin: 5px 0;">Product Code – <strong>WS0126</strong></p> <p>Sizes – S / M / L | Price – <strong>34,000 MMK</strong></p>
+    <p style="margin: 5px 0;">Product Code – <strong>WS0126</strong></p>
+    <p>Sizes – S / M / L | Price – <strong>34,000 MMK</strong></p>
     <p style="color:#c33; font-weight:bold; margin-top: 5px;">Buy 2 - Free Delivery</p>
     <img src="https://i.postimg.cc/mZHV2kn3/Beige-Elegant-Simple-Size-Chart-Instagram-Post.png" style="width:100%; border-radius:15px; margin-top:20px;">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGqOWUWkAOEbT9JDCgLUWwQV-XlnXS6A-nYNx8UaEzBcc03w/viewform?usp=header" target="_blank" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order via Form)</a>
+    <a href="https://forms.gle/8Wdii9L16Ra6fbwF6" target="_blank" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order via Form)</a>
   </div>
 </div>
 
 <script>
     function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('zoom-img').src = src; }
-    
-    // openPopup function ကို Shorts Co-ord Set (Navy) နဲ့ Shorts Co-ord Set (Olive) နှစ်မျိုးလုံးမှာ WS0126 ပါအောင် ပြင်လိုက်ပါတယ်
     function openPopup(productName) { 
         document.getElementById("popup-product-name").innerText = productName;
         document.getElementById("popup").style.display = "flex"; 
     }
-    
     function closePopup() { document.getElementById("popup").style.display = "none"; }
 </script>
 
