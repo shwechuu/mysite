@@ -1,67 +1,29 @@
-const { GoogleGenAI } = require("@google/genai");
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ error: "Method Not Allowed" }),
-    };
+    return { statusCode: 405, body: "Method Not Allowed" };
   }
 
   try {
-    if (!process.env.GEMINI_API_KEY) {
-      return {
-        statusCode: 500,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ error: "Missing GEMINI_API_KEY" }),
-      };
-    }
+    const { message } = JSON.parse(event.body);
 
-    const body = JSON.parse(event.body || "{}");
-    const message = body.message;
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    if (!message || !message.trim()) {
-      return {
-        statusCode: 400,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ error: "Message is required" }),
-      };
-    }
-
-    const ai = new GoogleGenAI({
-      apiKey: process.env.GEMINI_API_KEY,
-    });
-
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: message,
-    });
+    const result = await model.generateContent(message);
+    const response = await result.response;
+    const text = response.text();
 
     return {
       statusCode: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        reply: response.text || "No response",
-      }),
+      body: JSON.stringify({ reply: text })
     };
+
   } catch (error) {
     return {
       statusCode: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        error: error.message || "Internal Server Error",
-      }),
+      body: JSON.stringify({ error: error.message })
     };
   }
 };
