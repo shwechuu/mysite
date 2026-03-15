@@ -1,0 +1,10 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "Netlify Gemini Chat Function",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1"
+  }
+}
