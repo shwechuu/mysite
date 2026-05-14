@@ -142,6 +142,18 @@
                     <button class="btn-detail" onclick="openPajamaPopup()">View Detail</button>
                 </div>
             </div>
+            <div class="product-card" style="grid-column: span 2;">
+                <div style="display: flex; gap: 5px;">
+                    <img src="images/couple-top-blue.jpg" onclick="openLightbox(this.src)" style="width: 50%; aspect-ratio: 3/4; object-fit: cover; cursor: pointer;">
+                    <img src="images/couple-top-pink.jpg" onclick="openLightbox(this.src)" style="width: 50%; aspect-ratio: 3/4; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="product-info">
+                    <div style="font-size: 14px;">Couple Cotton Top</div>
+                    <div class="price">25,500 / 21,500 ကျပ်</div>
+                    <p style="font-size: 12px; color: #a06b13; margin-top: 5px;">အရောင်ရွေးချယ်ရန် - Available Colors</p>
+                    <button class="btn-detail" onclick="openCouplePopup()">View Detail</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -285,6 +297,21 @@
   </div>
 </div>
 
+<div class="popup" id="couple-popup">
+  <div class="popup-box">
+    <span class="close" onclick="closeCouplePopup()">✕</span>
+    <h3 style="color: #2d5a27;">🏷 🌿 Simple • Natural • Comfortable</h3>
+    <p><strong>Shwechuu | Couple Cotton Top</strong></p>
+    <p style="margin: 8px 0;"><strong>Women’s (Lace Trim) – 25,500 MMK</strong></p>
+    <p style="margin: 3px 0;">Lb 100–125 | Bust 30"–34"</p>
+    <p style="margin: 8px 0;"><strong>Men’s – 21,500 MMK</strong></p>
+    <p style="margin: 3px 0;">Up to 160 lb</p>
+    <p style="margin: 15px 0; font-size: 15px; color: #8b1e1e;"><strong>For customized size, additional 5,000 MMK will be charged.</strong></p>
+    <p style="font-size: 12px; color: #a06b13; margin-top: 5px;">အရောင်ရွေးချယ်ရန် - Available Colors</p>
+    <a href="https://forms.gle/8Wdii9L16Ra6fbwF6" target="_blank" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order via Form)</a>
+  </div>
+</div>
+
 <script>
     function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('zoom-img').src = src; }
     function openPopup(productName) { 
@@ -296,6 +323,8 @@
     function closeTopPopup() { document.getElementById("top-popup").style.display = "none"; }
     function openPajamaPopup() { document.getElementById("pajama-popup").style.display = "flex"; }
     function closePajamaPopup() { document.getElementById("pajama-popup").style.display = "none"; }
+    function openCouplePopup() { document.getElementById("couple-popup").style.display = "flex"; }
+    function closeCouplePopup() { document.getElementById("couple-popup").style.display = "none"; }
 </script>
 
 </body>
