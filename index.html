@@ -127,6 +127,22 @@
                     <button class="btn-detail" onclick="openPopup('Shorts Co-ord Set (Olive)')">View Detail</button>
                 </div>
             </div>
+            <div class="product-card">
+                <img src="images/top-stripe-1.jpg" onclick="openLightbox(this.src)">
+                <div class="product-info">
+                    <div style="font-size: 14px;">Stripe V-Neck Top</div>
+                    <div class="price">23,500 ကျပ်</div>
+                    <button class="btn-detail" onclick="openTopPopup()">View Detail</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/top-stripe-2.jpg" onclick="openLightbox(this.src)">
+                <div class="product-info">
+                    <div style="font-size: 14px;">Stripe V-Neck Top</div>
+                    <div class="price">23,500 ကျပ်</div>
+                    <button class="btn-detail" onclick="openTopPopup()">View Detail</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -231,6 +247,18 @@
 <footer><p>© 2026 Shwe Chuu Premium Textile</p></footer>
 
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'"><img id="zoom-img"></div>
+<div class="popup" id="top-popup">
+  <div class="popup-box">
+    <span class="close" onclick="closeTopPopup()">✕</span>
+    <h3 style="color: #2d5a27;">🏷 Stripe V-Neck Top</h3>
+    <p><strong>Shwechuu | Stripe V-Neck Top</strong></p>
+    <p style="margin: 10px 0; font-size: 16px;">Price – <strong>23,500 MMK</strong></p>
+    <p style="margin: 10px 0;"><strong>Free Size – Up to 125 lb</strong></p>
+    <p style="margin: 15px 0; font-size: 15px; color: #8b1e1e;"><strong>For customized size, additional 5,000 MMK will be charged.</strong></p>
+    <a href="https://forms.gle/8Wdii9L16Ra6fbwF6" target="_blank" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order via Form)</a>
+  </div>
+</div>
+
 <div class="popup" id="popup">
   <div class="popup-box">
     <span class="close" onclick="closePopup()">✕</span>
@@ -251,6 +279,8 @@
         document.getElementById("popup").style.display = "flex"; 
     }
     function closePopup() { document.getElementById("popup").style.display = "none"; }
+    function openTopPopup() { document.getElementById("top-popup").style.display = "flex"; }
+    function closeTopPopup() { document.getElementById("top-popup").style.display = "none"; }
 </script>
 
 </body>
