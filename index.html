@@ -134,6 +134,14 @@
                     <button class="btn-detail" onclick="openTopPopup()">View Detail</button>
                 </div>
             </div>
+            <div class="product-card" style="grid-column: span 2;">
+                <img src="images/ethnic-trim-pajama.jpg" onclick="openLightbox(this.src)" style="width: 100%; max-width: 400px; margin: 0 auto; display: block; aspect-ratio: 3/4; object-fit: cover; cursor: pointer;">
+                <div class="product-info">
+                    <div style="font-size: 14px;">Ethnic Trim Pajama Set</div>
+                    <div class="price">One Set - 46,500 ကျပ်</div>
+                    <button class="btn-detail" onclick="openPajamaPopup()">View Detail</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -265,6 +273,18 @@
   </div>
 </div>
 
+<div class="popup" id="pajama-popup">
+  <div class="popup-box">
+    <span class="close" onclick="closePajamaPopup()">✕</span>
+    <h3 style="color: #2d5a27;">🏷 🌿 Simple • Natural • Comfortable</h3>
+    <p><strong>Shwechuu | Ethnic Trim Pajama Set</strong></p>
+    <p style="margin: 5px 0;"><strong>One Set – 46,500 MMK</strong></p>
+    <p style="margin: 5px 0;">Lb 100–130 | Chest 30"–35"</p>
+    <p style="margin: 15px 0; font-size: 15px; color: #8b1e1e;"><strong>For customized size, additional 5,000 MMK will be charged.</strong></p>
+    <a href="https://forms.gle/8Wdii9L16Ra6fbwF6" target="_blank" class="btn" style="background:#8b1e1e; margin-top: 20px;">အခုပဲမှာယူမယ် (Order via Form)</a>
+  </div>
+</div>
+
 <script>
     function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('zoom-img').src = src; }
     function openPopup(productName) { 
@@ -274,6 +294,8 @@
     function closePopup() { document.getElementById("popup").style.display = "none"; }
     function openTopPopup() { document.getElementById("top-popup").style.display = "flex"; }
     function closeTopPopup() { document.getElementById("top-popup").style.display = "none"; }
+    function openPajamaPopup() { document.getElementById("pajama-popup").style.display = "flex"; }
+    function closePajamaPopup() { document.getElementById("pajama-popup").style.display = "none"; }
 </script>
 
 </body>
